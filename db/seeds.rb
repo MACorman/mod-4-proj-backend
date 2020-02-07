@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Cart.destroy_all
+Inventory.destroy_all
+Product.destroy_all
+ProductCart.destroy_all
+ProductInventory.destroy_all
+
 u1 = User.create(username: "Bill", password: "123")
 u2 = User.create(username: "Ted", password: "456")
 
@@ -24,8 +31,8 @@ ProductCart.create(product_id: p2.id, cart_id: c1.id)
 ProductCart.create(product_id: p4.id, cart_id: c1.id)
 ProductCart.create(product_id: p3.id, cart_id: c2.id)
 
-ProductInventory.create(inventory_id: i2.id, product_id: p2.id)
-ProductInventory.create(inventory_id: i1.id, product_id: p3.id)
+ProductInventory.create(inventory_id: i2.id, product_id: p2.id, price: 100, quantity: 2)
+ProductInventory.create(inventory_id: i1.id, product_id: p3.id, price: 2, quantity: 7)
 
 
 
