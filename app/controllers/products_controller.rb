@@ -7,10 +7,11 @@ class ProductsController < ApplicationController
 
     def create
         product = Product.create(products_params)
+        render json: product
     end
 
     private 
     def products_params
-        params.require(:product).permit(:user_id, :name, :description, :category)
+        params.require(:product).permit(:name, :description, :category)
     end
 end
