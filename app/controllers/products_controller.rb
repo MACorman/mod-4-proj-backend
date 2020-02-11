@@ -6,12 +6,12 @@ class ProductsController < ApplicationController
     end
 
     def create
-        product = Product.create(products_params)
+        product = Product.find_or_create_by(products_params)
         render json: product
     end
 
     private 
     def products_params
-        params.require(:product).permit(:name, :description, :category)
+        params.require(:product).permit(:name, :category)
     end
 end
