@@ -15,7 +15,6 @@ class ProductInventoriesController < ApplicationController
         params.permit(:product_id, :inventory_id, :price, :quantity, :description, :image)
         # product = Product.find_or_create_by(name:, :price, :quantity, :description, :image)
         # params.require(:product_inventory).permit(:product_id, :inventory_id, :price, :quantity)
-
     end
 
     # def product_params
