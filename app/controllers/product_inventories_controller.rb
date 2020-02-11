@@ -12,6 +12,7 @@ class ProductInventoriesController < ApplicationController
     def create
         # product = Product.find_or_create_by(product_params)
         product_inventory = ProductInventory.find_or_create_by(product_inventory_params)
+        # byebug
         render json: product_inventory
     end
 
