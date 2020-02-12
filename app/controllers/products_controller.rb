@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
         render json: product
     end
 
+    def destroy
+        product = Product.find(params[:id])
+        product.destroy
+        render json: product
+    end
+
     private 
     def products_params
         params.require(:product).permit(:name, :category)
