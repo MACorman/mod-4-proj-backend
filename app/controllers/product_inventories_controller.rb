@@ -16,6 +16,12 @@ class ProductInventoriesController < ApplicationController
         render json: product_inventory
     end
 
+    def update
+        product_inventory = ProductInventory.find(params[:id])
+        product_inventory.update(product_inventory_params)
+        render json: product_inventory
+    end
+
     def destroy
         product_inventory = ProductInventory.find(params[:id])
         product_inventory.destroy
